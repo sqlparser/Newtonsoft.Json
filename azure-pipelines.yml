@@ -10,14 +10,6 @@ steps:
     dotnet --info
   displayName: 'Dotnet installs'
 
-- powershell: |
-    $basePath = resolve-path .
-    $keyPath = "$basePath\key.snk"
-    $keyData = [System.Convert]::FromBase64String($Env:KeyData)
-    [System.IO.File]::WriteAllBytes($keyPath, $keyData)
-  env:
-    KeyData: $(newtonsoft.keyData)
-  displayName: 'Prepare signing key'
   
 
 - powershell: |
