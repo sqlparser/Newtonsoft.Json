@@ -18,7 +18,7 @@ steps:
   env:
     KeyData: $(newtonsoft.keyData)
   displayName: 'Prepare signing key'
-  condition: and(succeeded(), not(eq(variables['build.reason'], 'PullRequest')))
+  
 
 - powershell: |
     $basePath = resolve-path .
